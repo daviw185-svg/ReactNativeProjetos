@@ -1,0 +1,39 @@
+
+export interface ColorScheme{
+    bgPrimary: string;
+    bgSecondary: string;
+    success: string;
+    danger: string;
+    warning: string;
+    text: string;
+    gradients: {
+        background: [string, string];}
+    statusTheme: "light-content" | "dark-content";
+}
+
+const lightColors: ColorScheme={
+    bgPrimary: "#fff",
+    bgSecondary: "#cfcece",
+    success: "#88e12f",
+    danger: "#e73232",
+    warning:" #ecc44a",
+    text: "#262626",
+    gradients: {
+        background: ["#e7e7e7", "#b2b2b2"],
+    },
+    statusTheme: "light-content" as const,
+
+}
+
+const darkColors: ColorScheme={
+    bgPrimary: "#000000",
+    bgSecondary: "#3a3a3a",
+    success: "#88e12f",
+    danger: "#e73232",
+    warning:" #ecc44a",
+    text: "#ffffff",
+    gradients: {
+        background: ["#e7e7e7", "6b6b6b"],
+    },
+    statusTheme: "dark-content" as const,
+}
