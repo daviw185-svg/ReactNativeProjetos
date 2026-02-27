@@ -1,9 +1,18 @@
+import { api } from "@/convex/_generated/api";
+import { useMutation, useQuery } from "convex/react";
+
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import {Link} from "expo-router";
+import { Link } from "expo-router";
 import useTheme from "@/hooks/useTheme";
 
 export default function Index() {
-    const { toggleDarkMode } = useTheme();
+  // Trocar o tema  
+  const { toggleDarkMode } = useTheme();
+    
+    // backend
+    const cursos = useQuery(api.cursos.getCursos)
+    const addCursos = useMutation(api.cursos.addCursos)
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>
@@ -29,6 +38,7 @@ export default function Index() {
           <Link style={styles.links} href={"/(tabs)/maisCursos"}>Mais Cursos</Link>
            </View>
                 <TouchableOpacity onPress={toggleDarkMode}>MUDA TEMA</TouchableOpacity>
+                <TouchableOpacity onPress={() => addCursos({nome: "Curso de react"})}>ADICIONAR CURSO</TouchableOpacity>
       </View>
         </View>
 

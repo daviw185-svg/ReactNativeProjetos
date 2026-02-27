@@ -1,5 +1,4 @@
 import {StyleSheet, View, Text } from 'react-native'
-import React from 'react'
 
 
 const maisCursos = () => {
@@ -10,6 +9,14 @@ const maisCursos = () => {
     </View>
     <View style={styles.cursos}>
       <View>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
+        <Text style={styles.textCursos}>Cursos de TI</Text>
         <Text style={styles.textCursos}>Cursos de TI</Text>
         <Text style={styles.textCursos}>Cursos de TI</Text>
         <Text style={styles.textCursos}>Cursos de TI</Text>
@@ -38,10 +45,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff"
   },
   cursos:{
+    flex: 1,
+    justifyContent: "space-between",
+    gap: 20,
+    marginTop: 30,
   },
   textCursos: {
     color: "#ffffff",
-    
+    backgroundColor: "#ff9100",
+    padding: 20,
+    fontSize: 20,
   }
 })
 

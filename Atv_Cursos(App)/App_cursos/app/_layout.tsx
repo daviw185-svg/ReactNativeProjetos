@@ -1,14 +1,21 @@
+import { Stack, Tabs } from "expo-router";
 import { ThemeProvider } from "@/hooks/useTheme";
-import { Stack } from "expo-router";
+
+// convex
+
+import { ConvexReactClient, ConvexProvider } from "convex/react";
+
+const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!, {
+  unsavedChangesWarning: false,
+});
 
 export default function RootLayout() {
-  // return <Stack >
-  //   <Stack.Screen name="index" options={{title: "Home"}}/>
-  //   <Stack.Screen name="catalogo" options={{title: "Shop"}}/>
-  // </Stack>;
-  return (
-    <ThemeProvider>
-      <Stack screenOptions={ {headerShown: false} }/>
-    </ThemeProvider>
-    )
+  return ( 
+    <ConvexProvider client={convex}>
+      <ThemeProvider>
+        <Stack screenOptions={{headerShown: false}}>
+        </Stack>
+      </ThemeProvider>
+    </ConvexProvider>
+  )
 }

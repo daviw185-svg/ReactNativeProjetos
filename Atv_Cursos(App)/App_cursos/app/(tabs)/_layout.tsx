@@ -1,6 +1,6 @@
-import { Tabs } from "expo-router";
-import useTheme from "@/hooks/useTheme"
-import React from "react";
+import {  Tabs } from "expo-router";
+import useTheme from "@/hooks/useTheme";
+
 import { Ionicons } from "@expo/vector-icons";
 
 const tabsLayout = () => {
