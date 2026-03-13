@@ -1,5 +1,8 @@
+import React from 'react'
 import { Tabs } from 'expo-router'
 import {Ionicons} from "@expo/vector-icons"
+import Tabs from '.'
+
 
 const TabsLayout = () => {
   return (
@@ -13,13 +16,13 @@ const TabsLayout = () => {
     }}}>
       <Tabs.Screen name="index" options={
         {title: "Home", 
-        tabBarIcon: ({color}) => (
+        tabBarIcon: ({color}: {color: string}) => (
         <Ionicons name='home' color={color}/>)
         }}/>
 
       <Tabs.Screen name="page" options={
         {title: "Shopee",
-        tabBarIcon: ({color}) => (
+        tabBarIcon: ({color}: {color: string}) => (
         <Ionicons name='cart' color={color}/>)
       }}/>
     </Tabs>
