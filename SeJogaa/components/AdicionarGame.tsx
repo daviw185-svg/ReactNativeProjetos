@@ -39,7 +39,7 @@ const AdicionarGame = () => {
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
-            <Image style={homeStyles.img} source={{ uri: "https://backloggd.b-cdn.net/home_demo/home-demo-collection.jpg" }} />
+            {/* <Image style={homeStyles.img} source={{ uri: "https://backloggd.b-cdn.net/home_demo/home-demo-collection.jpg" }} /> */}
         </View>
     )
 }

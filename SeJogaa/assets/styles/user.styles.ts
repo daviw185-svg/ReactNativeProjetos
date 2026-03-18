@@ -4,14 +4,12 @@ import { StyleSheet } from "react-native";
 export const createUserStyles = (colors: ColorScheme) => {
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: colors.bg,
       width: "100%",
       height: "100%",    
       alignItems: "center",
     },
     safeArea: {
       flex:1, 
-      backgroundColor: colors.bg,
     },
     TouchableOpacity: {
       backgroundColor: "#000000",

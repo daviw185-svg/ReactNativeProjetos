@@ -4,6 +4,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { LinearGradient } from "expo-linear-gradient";
+
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
@@ -12,7 +14,7 @@ const user = () => {
   const { toggleDarkMode, colors } = useTheme();
   const userStyles = createUserStyles(colors);
   return (
-    <><View style={userStyles.container}>
+    <><LinearGradient colors={colors.gradients.primary} style={userStyles.container}>
         <View >  
           <FontAwesome style={userStyles.iconUser} name="user-circle" color="#ffffff" size={120} />
           </View>
@@ -22,10 +24,10 @@ const user = () => {
         <Text style={userStyles.Text}> Atual Curso: Engenharia Mecânica </Text>
         <SafeAreaView style={userStyles.safeArea}>
          <TouchableOpacity style={userStyles.iconContainer} onPress={toggleDarkMode}>
-          <MaterialCommunityIcons name='circle-half-full' color = {colors.text} size={50}/>
+          <MaterialCommunityIcons name='circle-half-full' color = {colors.bg} size={50}/>
           </TouchableOpacity>
         </SafeAreaView>
-      </View></>
+      </LinearGradient></>
   )
 }
 

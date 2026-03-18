@@ -55,12 +55,12 @@ export const createHomeStyles = (colors: ColorScheme) => {
       fontWeight: "700",
       letterSpacing: -1,
       marginBottom: 4,
-      color: colors.text,
+      color: "#ffffff",
     },
     subtitle: {
       fontSize: 17,
       fontWeight: "500",
-      color: colors.textMuted,
+      color: "#c5c5c5",
     },
     progressContainer: {
       marginTop: 8,
