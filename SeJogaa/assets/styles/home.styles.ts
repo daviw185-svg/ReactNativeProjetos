@@ -68,7 +68,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
     subtitle: {
       fontSize: 17,
       fontWeight: "500",
-      color: colors.textMuted,
+      color: "#c5c5c5",
     },
     progressContainer: {
       marginTop: 8,

@@ -45,7 +45,11 @@ const lightColors: ColorScheme = {
     gradients: {
         background: ["#f8fafc", "#e2e8f0"],
         surface: ["#ffffff", "#f8fafc"],
+<<<<<<< HEAD
         primary: ["#000000", "#002fb1"],
+=======
+        primary: ["#0038ee", "#000010"],
+>>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
         success: ["#10b981", "#059669"],
         warning: ["#f59e0b", "#d97706"],
         danger: ["#006efd", "#0051ff"],
@@ -75,7 +79,11 @@ const darkColors: ColorScheme = {
     gradients: {
         background: ["#0f172a", "#1e293b"],
         surface: ["#1e293b", "#334155"],
+<<<<<<< HEAD
         primary: ["#0044ff", "#00c3ff"],
+=======
+        primary: ["#0044ff", "#19f7ff"],
+>>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
         success: ["#10b981", "#059669"],
         warning: ["#f59e0b", "#d97706"],
         danger: ["#0019fd", "#0441c5"],

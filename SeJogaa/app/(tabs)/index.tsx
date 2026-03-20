@@ -5,6 +5,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { api } from "@/convex/_generated/api";
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import useTheme from "@/hooks/useTheme";
+<<<<<<< HEAD
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery } from "convex/react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -12,12 +13,25 @@ import { Alert, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 type Game = Doc<"game">
 
+=======
+import LoadingSpinner from "@/components/LoadingSpinner" ;
+import MaterialCommunityIcons from "@expo/vector-icons/build/MaterialCommunityIcons";
+import { LinearGradient } from "expo-linear-gradient";
+import React from "react";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useMutation, useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { Doc, Id } from "@/convex/_generated/dataModel";
+type Game = Doc<"game">
+>>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
 
 
 export default function Index() {
   const { toggleDarkMode, colors } = useTheme();
   const homeStyles = createHomeStyles(colors);
   const games = useQuery(api.games.getGames);
+<<<<<<< HEAD
   const isLoading = games === undefined
   if (isLoading) return <LoadingSpinner/>
 
@@ -31,6 +45,17 @@ export default function Index() {
   }
  
  const renderGameItem = ({item}: {item: Game}) => {
+=======
+  // const toggleGame = useMutation(api.games.toggleGame)
+  const isLoading = games === undefined
+  if (isLoading) return <LoadingSpinner/>
+
+  // const handleToggleGame = async (id: Id"<game>") => {
+
+  // }
+
+  const renderGameItem = ({item}: {item: Game}) => {
+>>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
     return (
       <View style={homeStyles.gameItemWrapper}>
         <LinearGradient
@@ -39,6 +64,7 @@ export default function Index() {
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
         >
+<<<<<<< HEAD
                <TouchableOpacity
             style={homeStyles.checkbox}
             activeOpacity={0.7}
@@ -62,6 +88,8 @@ export default function Index() {
               )}
             </LinearGradient>
           </TouchableOpacity>
+=======
+>>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
           <View>
             <Text
               style={[
@@ -88,6 +116,13 @@ export default function Index() {
       <AdicionarGame/>
       <FlatList data={games} renderItem={renderGameItem} keyExtractor={(item) => item._id} style={homeStyles.gameList}
         contentContainerStyle={homeStyles.gameListContent}/>
+<<<<<<< HEAD
+=======
+      {/* {games?.map((game) => <Text key={game._id}>{game.text}</Text>)} */}
+      <TouchableOpacity style={homeStyles.iconTheme} onPress={toggleDarkMode}>
+        <MaterialCommunityIcons name='circle-half-full' color = {colors.bg} size={50}/>
+      </TouchableOpacity>
+>>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
     </SafeAreaView>
     </LinearGradient>
   )
