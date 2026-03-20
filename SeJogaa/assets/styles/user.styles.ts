@@ -1,17 +1,17 @@
 import { ColorScheme } from "@/hooks/useTheme";
-import { StyleSheet } from "react-native";
+import { StyleSheet, } from "react-native";
+
 
 export const createUserStyles = (colors: ColorScheme) => {
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: colors.bg,
       width: "100%",
       height: "100%",    
       alignItems: "center",
+      overflow: "scroll"
     },
     safeArea: {
       flex:1, 
-      backgroundColor: colors.bg,
     },
     TouchableOpacity: {
       backgroundColor: "#000000",
@@ -24,7 +24,7 @@ export const createUserStyles = (colors: ColorScheme) => {
       marginLeft: 1700,
     },
     iconUser: {
-      color: colors.text,
+      color: colors.bg,
         marginTop: 50,
     },
     Text: {
@@ -33,11 +33,29 @@ export const createUserStyles = (colors: ColorScheme) => {
       padding: 20,
       justifyContent: "space-between",
       gap: 10,
-      backgroundColor: "#000000",
-      color: "#ffffff",
+      backgroundColor: colors.bg,
+      color: colors.text,
       fontSize: 20,
       fontWeight: "500",
       borderRadius: 10,
+    },
+    Textg: {
+      width: "50%",
+      marginTop: 20,
+      padding: 20,
+      justifyContent: "space-between",
+      gap: 10,
+      backgroundColor: colors.bg,
+      color: colors.text,
+      fontSize: 20,
+      fontWeight: "500",
+      borderRadius: 10,
+      
+    },
+    img: {
+      marginLeft: 20,
+      width: 161,
+      height: 200
     }
   })
 

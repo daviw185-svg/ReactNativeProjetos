@@ -4,13 +4,11 @@ import { StyleSheet } from "react-native";
 export const createSettingsStyles = (colors: ColorScheme) => {
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: colors.bg,
       width: "100%",
       height: "100%", 
     },
     safeArea: {
-      flex: 1,
-       backgroundColor: colors.bg,
+      flex: 1
     },
     TouchableOpacity: {
       backgroundColor: "#000000",

@@ -1,4 +1,4 @@
-import { v } from "convex/values";
+import { ConvexError, v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 
 // coletar todos os "to dos"
@@ -33,4 +33,19 @@ export const clearAllGames = mutation({
 
         return { deletedCount: games.length };
     },
+})
+
+// mudar status do game
+
+export const toggleGames = mutation({
+    args: {id: v.id("games")},
+    handler : async (ctx, args) => {
+        const game = await ctx.db.get(args.id);
+        if (!game) throw new ConvexError ("Game não foi encontrado")
+
+        await ctx.db.patch(args.id, {
+            isCompleted: !game.isCompleted,
+        })
+        
+    }
 })

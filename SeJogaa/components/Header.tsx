@@ -22,7 +22,7 @@ const Header = () => {
         <View style={homeStyles.titleContainer}>
             {/* Icone */}
             <LinearGradient colors={colors.gradients.primary} style={homeStyles.iconContainer}>
-                <Ionicons name='calendar' size={40} color={"#fff"}/>
+                <Ionicons name='game-controller' size={40} color={"#fff"}/>
             </LinearGradient>
         </View>
     
@@ -37,7 +37,7 @@ const Header = () => {
     <View style={homeStyles.progressContainer}>
         <View style={homeStyles.progressBarContainer}>
             <View style={homeStyles.progressBar}>
-                <LinearGradient colors={["#ff0000", "#07ff49"]} 
+                <LinearGradient colors={["#00eeff", "#07ff49"]} 
                 style={[homeStyles.progressFill, {width:`${barraDeProgresso}%` }]}>
                 </LinearGradient>
             </View>

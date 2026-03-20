@@ -5,7 +5,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      overflow: "scroll"
+      overflow: "scroll",
   
     },
     safeArea: {
@@ -22,6 +22,14 @@ export const createHomeStyles = (colors: ColorScheme) => {
       fontSize: 18,
       fontWeight: "500",
       color: colors.text,
+    },
+    Text: {
+        fontSize: 33,
+        marginTop: 50,
+        marginLeft: 20,
+        marginBottom: 10,
+        color: "#ffffff",
+        fontWeight: "700",
     },
     header: {
       paddingHorizontal: 24,
@@ -51,11 +59,11 @@ export const createHomeStyles = (colors: ColorScheme) => {
       flex: 1,
     },
     title: {
-      fontSize: 32,
+      fontSize: 40,
       fontWeight: "700",
       letterSpacing: -1,
       marginBottom: 4,
-      color: colors.text,
+      color: "#ffffff",
     },
     subtitle: {
       fontSize: 17,
@@ -118,7 +126,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
       height: 56,
       borderRadius: 28,
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "center"
     },
     addButtonDisabled: {
       opacity: 0.5,
@@ -243,8 +251,8 @@ export const createHomeStyles = (colors: ColorScheme) => {
       color: colors.textMuted,
     },
     img: {
-      width: 1400,
-      height: 1200
+      width: 933,
+      height: 800
     }
   });
 

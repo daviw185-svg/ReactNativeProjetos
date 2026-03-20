@@ -5,7 +5,7 @@ import useTheme from '@/hooks/useTheme';
 import { useMutation } from 'convex/react';
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
-import { Alert, TextInput, TouchableOpacity, View, Image } from 'react-native';
+import { Alert, TextInput, TouchableOpacity, View, Image, Text } from 'react-native';
 
 
 const AdicionarGame = () => {
@@ -32,14 +32,14 @@ const AdicionarGame = () => {
                 <TextInput style={homeStyles.input}
                     placeholder='Digite uma tarefa' placeholderTextColor={colors.textMuted}
                     multiline value={newGame} onChangeText={setNewGame} onSubmitEditing={handleAddGame} />
-
                 <TouchableOpacity onPress={handleAddGame} disabled={!newGame.trim()}>
-                    <LinearGradient style={homeStyles.addButton} colors={colors.gradients.primary}>
-                        <Ionicons name='add' size={24} color={colors.bg}></Ionicons>
+                    <LinearGradient style={homeStyles.addButton} colors={colors.gradients.danger}>
+                        <Ionicons name='add' size={24} color={"#ffffff"}></Ionicons>
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
-            <Image style={homeStyles.img} source={{ uri: "https://backloggd.b-cdn.net/home_demo/home-demo-collection.jpg" }} />
+            {/* <Text style={homeStyles.Text}> Organize e Personalize da melhor forma para você</Text>
+            <Image style={homeStyles.img} source={{ uri: "https://backloggd.b-cdn.net/home_demo/home-demo-collection.jpg" }} /> */}
         </View>
     )
 }
