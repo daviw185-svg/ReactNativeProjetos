@@ -32,18 +32,16 @@ const AdicionarGame = () => {
                 <TextInput style={homeStyles.input}
                     placeholder='Digite uma tarefa' placeholderTextColor={colors.textMuted}
                     multiline value={newGame} onChangeText={setNewGame} onSubmitEditing={handleAddGame} />
+
+                
+
                 <TouchableOpacity onPress={handleAddGame} disabled={!newGame.trim()}>
                     <LinearGradient style={homeStyles.addButton} colors={colors.gradients.danger}>
                         <Ionicons name='add' size={24} color={"#ffffff"}></Ionicons>
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
-<<<<<<< HEAD
-            {/* <Text style={homeStyles.Text}> Organize e Personalize da melhor forma para você</Text>
-            <Image style={homeStyles.img} source={{ uri: "https://backloggd.b-cdn.net/home_demo/home-demo-collection.jpg" }} /> */}
-=======
             {/* <Image style={homeStyles.img} source={{ uri: "https://backloggd.b-cdn.net/home_demo/home-demo-collection.jpg" }} /> */}
->>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
         </View>
     )
 }

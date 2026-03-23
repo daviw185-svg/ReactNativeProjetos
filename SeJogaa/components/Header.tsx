@@ -37,11 +37,7 @@ const Header = () => {
     <View style={homeStyles.progressContainer}>
         <View style={homeStyles.progressBarContainer}>
             <View style={homeStyles.progressBar}>
-<<<<<<< HEAD
-                <LinearGradient colors={["#00eeff", "#07ff49"]} 
-=======
                 <LinearGradient colors={["#fbffff", "#07ff49"]} 
->>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
                 style={[homeStyles.progressFill, {width:`${barraDeProgresso}%` }]}>
                 </LinearGradient>
             </View>

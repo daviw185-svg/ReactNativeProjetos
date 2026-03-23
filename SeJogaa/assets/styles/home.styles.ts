@@ -115,8 +115,8 @@ export const createHomeStyles = (colors: ColorScheme) => {
       maxHeight: 120,
       fontWeight: "500",
       backgroundColor: colors.backgrounds.input,
-      borderColor: colors.border,
-      color: colors.text,
+      borderColor: colors.shadow,
+      color: colors.bg,
     },
     inputFocused: {
       borderColor: colors.primary,
@@ -136,7 +136,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
     },
     gameListContent: {
       paddingHorizontal: 24,
-      paddingBottom: 100,
+      paddingBottom: 0,
     },
     emptyListContainer: {
       flexGrow: 1,
@@ -150,7 +150,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
       alignItems: "flex-start",
       padding: 20,
       borderRadius: 20,
-      shadowColor: "#000",
+      shadowColor: "#000000",
       shadowOffset: {
         width: 0,
         height: 4,
@@ -179,7 +179,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
       lineHeight: 24,
       fontWeight: "500",
       marginBottom: 16,
-      color: colors.text,
+      color: colors.bg,
     },
     gameActions: {
       flexDirection: "row",
@@ -253,7 +253,7 @@ export const createHomeStyles = (colors: ColorScheme) => {
     img: {
       width: 933,
       height: 800
-    }
+    },
   });
 
   return styles;

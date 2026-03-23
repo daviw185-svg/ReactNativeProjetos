@@ -44,21 +44,17 @@ const lightColors: ColorScheme = {
     shadow: "#000000",
     gradients: {
         background: ["#f8fafc", "#e2e8f0"],
-        surface: ["#ffffff", "#f8fafc"],
-<<<<<<< HEAD
-        primary: ["#000000", "#002fb1"],
-=======
+        surface: ["#1e293b", "#454545"],
         primary: ["#0038ee", "#000010"],
->>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
         success: ["#10b981", "#059669"],
         warning: ["#f59e0b", "#d97706"],
         danger: ["#006efd", "#0051ff"],
         muted: ["#9ca3af", "#6b7280"],
-        empty: ["#f3f4f6", "#e5e7eb"],
+        empty: ["#353535", "#e5e7eb"],
     },
     backgrounds: {
-        input: "#ffffff",
-        editInput: "#ffffff",
+        input: "#414141",
+        editInput: "#363636",
     },
     statusBarStyle: "dark-content" as const,
     colorIconInactive: undefined,
@@ -78,12 +74,8 @@ const darkColors: ColorScheme = {
     shadow: "#000000",
     gradients: {
         background: ["#0f172a", "#1e293b"],
-        surface: ["#1e293b", "#334155"],
-<<<<<<< HEAD
-        primary: ["#0044ff", "#00c3ff"],
-=======
+        surface: ["#e2e2e2", "#ffffff"],
         primary: ["#0044ff", "#19f7ff"],
->>>>>>> 2164fb0730329057a8e9002da97009d69ab937ab
         success: ["#10b981", "#059669"],
         warning: ["#f59e0b", "#d97706"],
         danger: ["#0019fd", "#0441c5"],
