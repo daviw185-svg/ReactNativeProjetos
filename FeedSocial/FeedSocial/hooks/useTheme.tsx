@@ -1,0 +1,138 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+
+export interface ColorScheme {
+  colorIconInactive: string | undefined;
+  colorIcon: string | undefined;
+  bg: string;
+  surface: string;
+  text: string;
+  textMuted: string;
+  border: string;
+  primary: string;
+  success: string;
+  warning: string;
+  danger: string;
+  shadow: string;
+  gradients: {
+    background: [string, string];
+    surface: [string, string];
+    primary: [string, string];
+    success: [string, string];
+    warning: [string, string];
+    danger: [string, string];
+    muted: [string, string];
+    empty: [string, string];
+  };
+  backgrounds: {
+    input: string;
+    editInput: string;
+  };
+  statusBarStyle: "light-content" | "dark-content";
+}
+
+const lightColors: ColorScheme = {
+    bg: "#f8fafc",
+    surface: "#ffffff",
+    text: "#1e293b",
+    textMuted: "#64748b",
+    border: "#e2e8f0",
+    primary: "#3b82f6",
+    success: "#10b981",
+    warning: "#f59e0b",
+    danger: "#ef4444",
+    shadow: "#000000",
+    gradients: {
+        background: ["#f8fafc", "#e2e8f0"],
+        surface: ["#1e293b", "#454545"],
+        primary: ["#0038ee", "#000010"],
+        success: ["#10b981", "#059669"],
+        warning: ["#f59e0b", "#d97706"],
+        danger: ["#006efd", "#0051ff"],
+        muted: ["#9ca3af", "#6b7280"],
+        empty: ["#353535", "#e5e7eb"],
+    },
+    backgrounds: {
+        input: "#414141",
+        editInput: "#363636",
+    },
+    statusBarStyle: "dark-content" as const,
+    colorIconInactive: undefined,
+    colorIcon: undefined
+};
+
+const darkColors: ColorScheme = {
+    bg: "#0f172a",
+    surface: "#1e293b",
+    text: "#f1f5f9",
+    textMuted: "#94a3b8",
+    border: "#334155",
+    primary: "#60a5fa",
+    success: "#34d399",
+    warning: "#fbbf24",
+    danger: "#f87171",
+    shadow: "#000000",
+    gradients: {
+        background: ["#0f172a", "#1e293b"],
+        surface: ["#e2e2e2", "#ffffff"],
+        primary: ["#0044ff", "#19f7ff"],
+        success: ["#10b981", "#059669"],
+        warning: ["#f59e0b", "#d97706"],
+        danger: ["#0019fd", "#0441c5"],
+        muted: ["#374151", "#4b5563"],
+        empty: ["#374151", "#4b5563"],
+    },
+    backgrounds: {
+        input: "#ffffff",
+        editInput: "#ececec",
+    },
+    statusBarStyle: "light-content" as const,
+    colorIconInactive: undefined,
+    colorIcon: undefined
+};
+
+// null check - verificicar o tipo do contexto
+// void - nada
+interface ThemeContextType {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+  colors: ColorScheme;
+}
+
+const ThemeContext = createContext<undefined | ThemeContextType>(undefined);
+
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // get the user's choice
+    AsyncStorage.getItem("darkMode").then((value) => {
+      if (value) setIsDarkMode(JSON.parse(value));
+    });
+  }, []);
+
+  const toggleDarkMode = async () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    await AsyncStorage.setItem("darkMode", JSON.stringify(newMode));
+  };
+
+  const colors = isDarkMode ? darkColors : lightColors;
+
+  return (
+    <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode, colors }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+
+  return context;
+};
+
+export default useTheme;
