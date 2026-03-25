@@ -23,6 +23,7 @@ export interface ColorScheme {
     danger: [string, string];
     muted: [string, string];
     empty: [string, string];
+    fade: [string, string];
   };
   backgrounds: {
     input: string;
@@ -51,6 +52,7 @@ const lightColors: ColorScheme = {
         danger: ["#006efd", "#0051ff"],
         muted: ["#9ca3af", "#6b7280"],
         empty: ["#353535", "#e5e7eb"],
+        fade: ["#00000000", "#000000"]
     },
     backgrounds: {
         input: "#414141",
@@ -77,10 +79,12 @@ const darkColors: ColorScheme = {
         surface: ["#e2e2e2", "#ffffff"],
         primary: ["#0044ff", "#19f7ff"],
         success: ["#10b981", "#059669"],
-        warning: ["#f59e0b", "#d97706"],
+        warning: ["#ffffff00", "#1d1d1d"],
         danger: ["#0019fd", "#0441c5"],
         muted: ["#374151", "#4b5563"],
         empty: ["#374151", "#4b5563"],
+         fade: ["#00000000", "#000000"]
+        
     },
     backgrounds: {
         input: "#ffffff",
