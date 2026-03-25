@@ -37,7 +37,7 @@ export const clearAllGames = mutation({
 
 // mudar status do game
 
-export const toggleGames = mutation({
+export const toggleGame = mutation({
     args: {id: v.id("games")},
     handler : async (ctx, args) => {
         const game = await ctx.db.get(args.id);
@@ -45,7 +45,29 @@ export const toggleGames = mutation({
 
         await ctx.db.patch(args.id, {
             isCompleted: !game.isCompleted,
-        })
+        });
         
+    },
+});
+
+// atualizar o texto do game
+export const updateGame = mutation ({
+    args : { id: v.id("games"),
+            text: v.string()
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            text: args.text
+        })
+    }
+})
+
+// deletar 1 game
+
+export const deleteGame = mutation ({
+    args : { 
+        id: v.id("games")},
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args.id)
     }
 })
