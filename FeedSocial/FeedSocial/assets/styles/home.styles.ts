@@ -150,7 +150,9 @@ export const createHomeStyles = (colors: ColorScheme) => {
       opacity: 0.5,
     },
     postList: {
-      flex: 1,
+      flex:1,
+      width: 1200,
+      
     },
     postListContent: {
       paddingHorizontal: 24,
